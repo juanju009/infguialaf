@@ -16,7 +16,7 @@ session_start();
 /* ============================ SITE_CONFIG ============================ */
 $SITE = [
     // --- Identidad de ESTA guía (no del banco) -------------------------
-    'nombre'        => 'Guía Bancaria Responsable',            // ✏️ Nombre de su guía
+    'nombre'        => 'Guía de Orientacion Responsable',            // ✏️ Nombre de su guía
     'subtitulo'     => 'Orientación educativa independiente',  // ✏️
     'responsable'   => 'ALCIDES DUVAN ARISTAZABAL BADILLO',                // ✏️ OBLIGATORIO: responsable del sitio
 
@@ -622,7 +622,7 @@ td:first-child{font-weight:600}
       <h3>Cookies y medición</h3>
       <p><?php if ($SITE['banner_cookies']): ?>Con su consentimiento, usamos cookies de Google Ads para medir la efectividad de nuestros anuncios. Si las rechaza, no se carga ninguna etiqueta de medición ni publicidad. Puede cambiar su elección en cualquier momento desde el enlace “Preferencias de cookies” al pie de página.<?php else: ?>Actualmente este sitio no utiliza cookies de medición ni publicidad. Solo guarda en su navegador si ya vio el aviso inicial.<?php endif; ?></p>
       <h3>Sus derechos</h3>
-      <p>Puede solicitar acceso o eliminación de los datos que nos haya enviado escribiendo a <?= $SITE['email'] !== '' ? '<a href="mailto:' . h($SITE['email']) . '">' . h($SITE['email']) . '</a>' : '<span class="pendiente">PENDIENTE: correo de contacto</span>' ?>.</p>
+      <p>Puede solicitar acceso o eliminación de los datos que nos haya enviado escribiendo a <?= $SITE['email'] !== '' ? '<a href="mailto:' . h($SITE['email']) . '">' . h($SITE['email']) . '</a>' : '<span class="pendiente">Contenido Educativo</span>' ?>.</p>
     </div>
   </div>
 </section>
