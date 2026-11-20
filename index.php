@@ -91,38 +91,38 @@ if ($formActivo && ($_SERVER['REQUEST_METHOD'] ?? '') === 'POST' && isset($_POST
 /* ------------------------- Contenido editable ------------------------ */
 $NAV = [
     ['#aviso', 'Quiénes somos'], ['#canales', 'Canales oficiales'], ['#buenas-practicas', 'Buenas prácticas'],
-    ['#fraudes', 'Evitar fraudes'], ['#que-hacer', 'Qué hacer si…'], ['#faq', 'Preguntas'],
+    ['#guia-uso', 'Guía de uso'], ['#que-hacer', 'Qué hacer si…'], ['#faq', 'Preguntas'],
 ];
 
 $PRACTICAS = [
-    ['ico' => 'lock',  't' => 'Banca en línea', 'd' => 'Escriba usted mismo la dirección del sitio oficial o use un marcador guardado. No entre desde enlaces recibidos por SMS, correo o redes sociales.'],
-    ['ico' => 'phone', 't' => 'App móvil', 'd' => 'Descargue la app oficial (' . $SITE['app_oficial'] . ') solo desde Google Play o App Store, verifique el desarrollador y mantenga el teléfono actualizado y con bloqueo de pantalla.'],
-    ['ico' => 'card',  't' => 'Tarjetas', 'd' => 'Firme su tarjeta, no preste su PIN, active las notificaciones de consumo si su banco las ofrece y revise sus movimientos con frecuencia.'],
-    ['ico' => 'atm',   't' => 'Cajeros automáticos', 'd' => 'Cubra el teclado al digitar, observe si hay piezas sueltas o extrañas en la ranura y no acepte ayuda de desconocidos.'],
-    ['ico' => 'send',  't' => 'Transferencias', 'd' => 'Confirme el nombre del titular y el número de cuenta antes de enviar. Desconfíe de urgencias, premios o “errores” que le pidan devolver dinero.'],
-    ['ico' => 'key',   't' => 'Contraseñas y códigos', 'd' => 'Use claves únicas y largas. Nunca comparta códigos de verificación (OTP/token): sirven para autorizar operaciones a su nombre.'],
+    ['ico' => 'lock',  't' => 'Banca en línea', 'd' => 'Ingrese escribiendo la dirección oficial o desde un marcador guardado. Allí puede consultar saldos y movimientos y realizar operaciones según los servicios que tenga habilitados.'],
+    ['ico' => 'phone', 't' => 'App móvil', 'd' => 'Descargue la app oficial (' . $SITE['app_oficial'] . ') desde Google Play o App Store y mantenga su teléfono actualizado para usarla sin inconvenientes.'],
+    ['ico' => 'card',  't' => 'Tarjetas', 'd' => 'Firme su tarjeta al recibirla, memorice su PIN y revise sus movimientos con frecuencia para llevar el control de sus gastos.'],
+    ['ico' => 'atm',   't' => 'Cajeros automáticos', 'd' => 'Tenga a mano su tarjeta y su PIN, siga las instrucciones de la pantalla y guarde el comprobante de cada operación.'],
+    ['ico' => 'send',  't' => 'Transferencias', 'd' => 'Verifique el nombre del titular y el número de cuenta antes de confirmar, y conserve el comprobante de la operación.'],
+    ['ico' => 'key',   't' => 'Contraseñas', 'd' => 'Elija una clave fácil de recordar para usted y difícil de adivinar, cámbiela periódicamente y manténgala solo para usted.'],
 ];
 
-$FRAUDES = [
-    ['t' => 'Phishing (correo o SMS falso)', 'd' => 'Mensajes que imitan a un banco con enlaces a páginas copiadas para robar usuario y clave.'],
-    ['t' => 'Vishing (llamada falsa)', 'd' => 'Alguien dice ser “del banco” y pide claves, códigos o que instale una aplicación de control remoto.'],
-    ['t' => 'Perfiles falsos en redes', 'd' => 'Cuentas que copian logos y nombres para ofrecer préstamos “rápidos” a cambio de un pago previo.'],
-    ['t' => 'Falsos intermediarios', 'd' => 'Personas o sitios que cobran por “agilizar” trámites. Los trámites se hacen directamente con la entidad.'],
+$PASOS_USO = [
+    ['Infórmese en los canales oficiales', 'Consulte en el sitio oficial o en una sucursal los productos disponibles y los requisitos vigentes antes de cualquier trámite.'],
+    ['Active su acceso digital', 'Siga las instrucciones del banco para habilitar su usuario de banca en línea y crear su contraseña personal.'],
+    ['Instale la app oficial', 'Descargue ' . $SITE['app_oficial'] . ' desde la tienda de su teléfono e ingrese con sus credenciales.'],
+    ['Lleve el control de sus finanzas', 'Revise sus saldos, movimientos y estados de cuenta con regularidad y guarde los comprobantes de sus operaciones.'],
 ];
 
 $TABLA = [
-    ['Recibí un SMS o correo con un enlace “del banco”', 'No abra el enlace. Ingrese escribiendo la dirección oficial.', 'Canales oficiales del banco'],
-    ['Me llamaron pidiendo un código o clave', 'Cuelgue. No comparta nada. Llame usted al número publicado en el sitio oficial.', 'Atención al cliente oficial'],
-    ['Veo un cargo que no reconozco', 'Bloquee la tarjeta desde la app o por teléfono y reporte el movimiento.', 'Banco (reclamo formal)'],
-    ['Perdí mi tarjeta o me la robaron', 'Bloquéela de inmediato y solicite reposición.', 'Banco'],
+    ['Quiero conocer los requisitos de un producto', 'Consulte la información vigente en el sitio oficial o en una sucursal.', 'Banco (canales oficiales)'],
+    ['Olvidé mi contraseña de banca en línea', 'Use la opción de recuperación del sitio o la app oficial, o comuníquese con el banco.', 'Banco'],
+    ['Perdí mi tarjeta', 'Solicite el bloqueo y la reposición de la tarjeta.', 'Banco'],
+    ['Veo un movimiento que no reconozco', 'Comuníquese con el banco para que lo revise.', 'Banco (atención al cliente)'],
     ['Mi reclamo no fue resuelto', 'Conserve su número de reclamo y documentos y consulte las opciones del regulador.', 'SIBOIF (Superintendencia)'],
 ];
 
 $FAQ = [
     ['¿Ustedes son Banco LAFISE?', 'No. Somos una guía educativa independiente. No somos Banco LAFISE, no pertenecemos a ningún grupo financiero y no somos un banco.'],
-    ['¿Puedo hacer pagos o transferencias a través de esta página?', 'No. No recibimos ni efectuamos pagos, depósitos ni transferencias de ningún tipo. Si alguien le pide dinero en nombre de esta guía, es un intento de fraude.'],
+    ['¿Puedo hacer pagos o transferencias a través de esta página?', 'No. No recibimos ni efectuamos pagos, depósitos ni transferencias de ningún tipo. Esta guía no maneja dinero de ningún tipo.'],
     ['¿Pueden revisar mi cuenta o mi saldo?', 'No. No tenemos acceso a cuentas ni a sistemas bancarios. Para consultar su información, use los canales oficiales del banco.'],
-    ['¿Pueden tramitar un préstamo o una tarjeta por mí?', 'No. Solo orientamos sobre buenas prácticas. Las solicitudes se hacen directamente con la entidad financiera en sus canales oficiales.'],
+    ['¿Pueden tramitar un préstamo o una tarjeta por mí?', 'No. Solo orientamos sobre el uso de los servicios. Las solicitudes se hacen directamente con la entidad financiera en sus canales oficiales.'],
     ['¿Por qué me piden no enviar datos bancarios?', 'Porque nunca los necesitamos. No comparta números de tarjeta, cuentas, claves, PIN ni códigos con esta guía ni con nadie.'],
     ['¿La información de esta guía es oficial?', 'No. Es contenido educativo general. Las condiciones, tarifas y requisitos vigentes solo los informa el banco en sus canales oficiales.'],
 ];
@@ -266,7 +266,6 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,t
 .card p{color:var(--c-texto-2);margin:0}
 .card--si{border-top:5px solid var(--c-ok)}
 .card--no{border-top:5px solid var(--c-alerta)}
-.card--fraude{border-left:5px solid var(--c-alerta)}
 
 /* ===================== 9. CANALES OFICIALES ===================== */
 .canales{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:start}
@@ -431,10 +430,10 @@ td:first-child{font-weight:600}
     <div>
       <span class="hero__chip"><?= ico('alert') ?> No somos un banco · Solo orientación educativa</span>
       <h1>Aprenda a usar los servicios de LAFISE en Nicaragua de forma segura</h1>
-      <p class="lead">Una guía práctica e independiente con consejos para la banca en línea, la app, las tarjetas y los cajeros, y para reconocer intentos de fraude antes de que le afecten.</p>
+      <p class="lead">Una guía práctica e independiente que le orienta, paso a paso, en el uso de la banca en línea, la app, las tarjetas, los cajeros y las transferencias.</p>
       <div class="hero__acciones">
         <a class="btn btn--primario" href="#buenas-practicas" data-evento="ver_guia">Ver la guía</a>
-        <a class="btn btn--secundario" href="#fraudes" data-evento="ver_fraudes">Cómo evitar fraudes</a>
+        <a class="btn btn--secundario" href="#guia-uso" data-evento="ver_guia_uso">Guía de uso paso a paso</a>
       </div>
       <p class="hero__nota">Para cualquier operación, consulta de saldo o trámite, use únicamente los canales oficiales de <?= h($SITE['entidad']) ?>.</p>
     </div>
@@ -451,7 +450,7 @@ td:first-child{font-weight:600}
 <div class="banner" role="note">
   <div class="contenedor banner__in">
     <?= ico('shield') ?>
-    <p>Regla de oro: nadie que le escriba o le llame necesita su clave, PIN o código de verificación.</p>
+    <p>Consejo: antes de cualquier trámite, consulte los requisitos vigentes en los canales oficiales del banco.</p>
   </div>
 </div>
 
@@ -461,32 +460,10 @@ td:first-child{font-weight:600}
 <!-- ===================== QUIÉNES SOMOS / AVISO ===================== -->
 <section class="seccion seccion--alt" id="aviso">
   <div class="contenedor">
-    <div class="cabecera-seccion">
+    <div class="cabecera-seccion" style="margin-bottom:0">
       <span class="eyebrow">Quiénes somos</span>
       <h2>Una guía de orientación, no una entidad financiera</h2>
       <p class="lead">Este sitio es un proyecto educativo independiente. Nuestra única función es informar y orientar a los usuarios sobre el buen uso de los servicios de <?= h($SITE['entidad']) ?>.</p>
-    </div>
-    <div class="grid grid--2">
-      <article class="card card--si">
-        <div class="card__ico"><?= ico('check') ?></div>
-        <h3>Lo que sí hacemos</h3>
-        <ul class="lista-check lista-check--si">
-          <li><?= ico('check') ?> <span>Explicamos buenas prácticas de seguridad bancaria.</span></li>
-          <li><?= ico('check') ?> <span>Le ayudamos a identificar los canales oficiales.</span></li>
-          <li><?= ico('check') ?> <span>Describimos fraudes comunes y cómo evitarlos.</span></li>
-          <li><?= ico('check') ?> <span>Le indicamos a dónde acudir en cada situación.</span></li>
-        </ul>
-      </article>
-      <article class="card card--no">
-        <div class="card__ico" style="color:var(--c-alerta)"><?= ico('x') ?></div>
-        <h3>Lo que no hacemos</h3>
-        <ul class="lista-check lista-check--no">
-          <li><?= ico('x') ?> <span>No somos Banco LAFISE ni ningún otro banco.</span></li>
-          <li><?= ico('x') ?> <span>No recibimos transferencias, depósitos ni pagos de ningún tipo.</span></li>
-          <li><?= ico('x') ?> <span>No efectuamos pagos ni gestionamos cuentas, préstamos o tarjetas.</span></li>
-          <li><?= ico('x') ?> <span>No solicitamos datos bancarios, claves ni códigos.</span></li>
-        </ul>
-      </article>
     </div>
   </div>
 </section>
@@ -496,19 +473,19 @@ td:first-child{font-weight:600}
   <div class="contenedor canales">
     <div>
       <span class="eyebrow">Canales oficiales</span>
-      <h2>Cómo asegurarse de que está en el lugar correcto</h2>
-      <p class="lead">Los fraudes suelen empezar con una página o un perfil que imita al banco. Antes de escribir cualquier dato, verifique estos puntos.</p>
+      <h2>Cómo acceder a los canales oficiales</h2>
+      <p class="lead">Todos los trámites y operaciones se realizan directamente con el banco. Así puede acceder a sus canales.</p>
       <ol class="pasos">
-        <li><div><b>Escriba la dirección usted mismo</b><span>No llegue al banco desde enlaces en SMS, WhatsApp, correos o anuncios.</span></div></li>
-        <li><div><b>Revise el dominio completo</b><span>Lea la dirección de izquierda a derecha: copias como letras cambiadas o dominios extra son señal de alerta.</span></div></li>
-        <li><div><b>Descargue apps solo de tiendas oficiales</b><span>Busque “<?= h($SITE['app_oficial']) ?>” en Google Play o App Store y revise el desarrollador antes de instalar.</span></div></li>
-        <li><div><b>Use los teléfonos publicados en el sitio oficial</b><span>Si tiene dudas sobre una llamada, cuelgue y llame usted al número oficial.</span></div></li>
+        <li><div><b>Escriba la dirección usted mismo</b><span>Ingrese escribiendo la dirección en su navegador o guárdela en sus marcadores.</span></div></li>
+        <li><div><b>Verifique la dirección</b><span>Compruebe que la dirección escrita coincide con la del sitio oficial.</span></div></li>
+        <li><div><b>Descargue la app desde la tienda</b><span>Busque “<?= h($SITE['app_oficial']) ?>” en Google Play o App Store.</span></div></li>
+        <li><div><b>Use los teléfonos publicados en el sitio oficial</b><span>Para consultas, comuníquese con atención al cliente a través de los números oficiales.</span></div></li>
       </ol>
     </div>
     <aside class="url-box">
       <h3>Sitio oficial de <?= h($SITE['entidad']) ?></h3>
       <code><?= h($SITE['url_oficial']) ?></code>
-      <p>Escriba esta dirección usted mismo en su navegador y compárela letra por letra. Esta guía no enlaza a ningún sitio externo: así se acostumbra a no llegar al banco desde enlaces de terceros. No tenemos relación con la entidad.</p>
+      <p>Escriba esta dirección en su navegador para acceder al sitio del banco. Esta guía no enlaza a sitios externos y no tiene relación con la entidad.</p>
       <a class="btn btn--acento" href="#buenas-practicas" data-evento="ver_guia">Ver buenas prácticas</a>
     </aside>
   </div>
@@ -520,7 +497,7 @@ td:first-child{font-weight:600}
     <div class="cabecera-seccion">
       <span class="eyebrow">Buenas prácticas</span>
       <h2>Consejos para el uso diario de sus servicios bancarios</h2>
-      <p class="lead">Hábitos sencillos que reducen el riesgo en cada canal que utiliza.</p>
+      <p class="lead">Recomendaciones sencillas para aprovechar mejor cada canal.</p>
     </div>
     <div class="grid grid--3">
       <?php foreach ($PRACTICAS as $p): ?>
@@ -534,22 +511,19 @@ td:first-child{font-weight:600}
   </div>
 </section>
 
-<!-- ===================== FRAUDES ===================== -->
-<section class="seccion" id="fraudes">
+<!-- ===================== GUÍA DE USO ===================== -->
+<section class="seccion" id="guia-uso">
   <div class="contenedor">
     <div class="cabecera-seccion">
-      <span class="eyebrow">Prevención</span>
-      <h2>Fraudes comunes y cómo reconocerlos</h2>
-      <p class="lead">Las señales se repiten: urgencia, presión, premios inesperados y peticiones de claves o pagos por adelantado.</p>
+      <span class="eyebrow">Guía de uso</span>
+      <h2>Cómo empezar a usar los servicios, paso a paso</h2>
+      <p class="lead">Una ruta sencilla para organizarse y usar los servicios bancarios con tranquilidad.</p>
     </div>
-    <div class="grid grid--2">
-      <?php foreach ($FRAUDES as $f): ?>
-      <article class="card card--fraude">
-        <h3><?= h($f['t']) ?></h3>
-        <p><?= h($f['d']) ?></p>
-      </article>
+    <ol class="pasos grid grid--2">
+      <?php foreach ($PASOS_USO as [$t, $d]): ?>
+      <li><div><b><?= h($t) ?></b><span><?= h($d) ?></span></div></li>
       <?php endforeach; ?>
-    </div>
+    </ol>
   </div>
 </section>
 
@@ -559,7 +533,7 @@ td:first-child{font-weight:600}
     <div class="cabecera-seccion">
       <span class="eyebrow">Guía rápida</span>
       <h2>Qué hacer si…</h2>
-      <p class="lead">Una referencia rápida para actuar a tiempo. Ante cualquier problema con su cuenta, el canal correcto siempre es la entidad financiera.</p>
+      <p class="lead">Una referencia rápida para situaciones comunes. Para cualquier gestión con su cuenta, el canal correcto siempre es la entidad financiera.</p>
     </div>
     <div class="tabla-wrap" tabindex="0" role="region" aria-label="Tabla de situaciones y acciones recomendadas">
       <table>
@@ -636,9 +610,7 @@ td:first-child{font-weight:600}
       <?= ico('alert') ?>
       <div>
         <h2 style="font-size:1.4rem">Aviso importante</h2>
-        <p><strong>Este sitio no es Banco LAFISE, no es un banco y no es una entidad financiera.</strong> No tenemos relación, afiliación, patrocinio ni autorización de Banco LAFISE ni del Grupo LAFISE.</p>
-        <p><strong>No recibimos transferencias bancarias, depósitos ni ningún tipo de pago, y tampoco efectuamos pagos.</strong> Si alguien le solicita dinero o datos bancarios en nombre de esta guía, se trata de un fraude.</p>
-        <p>Nuestra única función es informar y orientar sobre el buen uso de los servicios de <?= h($SITE['entidad']) ?>. El contenido es general y educativo; las condiciones, tarifas y requisitos vigentes solo los informa la entidad en sus canales oficiales. “LAFISE” y sus marcas pertenecen a sus respectivos titulares y se mencionan únicamente con fines informativos.</p>
+        <p><strong>Este sitio no es Banco LAFISE, no es un banco y no es una entidad financiera; no recibimos transferencias, depósitos ni pagos de ningún tipo, y tampoco efectuamos pagos.</strong> Somos una guía de orientación independiente, sin relación, afiliación, patrocinio ni autorización de Banco LAFISE ni del Grupo LAFISE, cuya única función es orientar sobre el uso de los servicios de <?= h($SITE['entidad']) ?>; las condiciones, tarifas y requisitos vigentes solo los informa la entidad en sus canales oficiales, y “LAFISE” y sus marcas pertenecen a sus titulares y se mencionan únicamente con fines informativos.</p>
       </div>
     </div>
 
