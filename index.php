@@ -242,6 +242,8 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,t
 .hero__visual{position:relative}
 .tarjeta-hero{background:#fff;border-radius:22px;padding:1.8rem;box-shadow:var(--sombra);border:1px solid var(--c-borde)}
 .tarjeta-hero h2{font-size:1.25rem;font-family:var(--f-base)}
+.tarjeta-hero__txt{margin:0;color:var(--c-texto-2);line-height:1.75}
+.tarjeta-hero__txt strong{color:var(--c-alerta)}
 .lista-check{list-style:none;margin:0;padding:0;display:grid;gap:.75rem}
 .lista-check li{display:flex;gap:.65rem;align-items:flex-start}
 .lista-check--si .ico{color:var(--c-ok)}
@@ -425,16 +427,7 @@ td:first-child{font-weight:600}
     <div class="hero__visual">
       <div class="tarjeta-hero">
         <h2>Lo que esta guía es y lo que no es</h2>
-        <ul class="lista-check lista-check--si">
-          <li><?= ico('check') ?> <span>Información educativa y consejos de seguridad</span></li>
-          <li><?= ico('check') ?> <span>Orientación sobre cómo acudir a canales oficiales</span></li>
-        </ul>
-        <hr style="border:0;border-top:1px solid var(--c-borde);margin:1.2rem 0">
-        <ul class="lista-check lista-check--no">
-          <li><?= ico('x') ?> <span>No somos <?= h($SITE['entidad']) ?></span></li>
-          <li><?= ico('x') ?> <span>No recibimos ni hacemos pagos o transferencias</span></li>
-          <li><?= ico('x') ?> <span>No pedimos claves, PIN, tarjetas ni datos bancarios</span></li>
-        </ul>
+        <p class="tarjeta-hero__txt">Esta es una guía de orientación educativa independiente: ofrecemos información y consejos de seguridad, y le orientamos sobre cómo acudir a los canales oficiales. <strong>No somos <?= h($SITE['entidad']) ?> ni ningún banco</strong>, no recibimos ni hacemos pagos o transferencias de ningún tipo, y nunca pedimos claves, PIN, tarjetas ni datos bancarios.</p>
       </div>
     </div>
   </div>
