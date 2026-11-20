@@ -18,12 +18,12 @@ $SITE = [
     // --- Identidad de ESTA guía (no del banco) -------------------------
     'nombre'        => 'Guía Bancaria Responsable',            // ✏️ Nombre de su guía
     'subtitulo'     => 'Orientación educativa independiente',  // ✏️
-    'responsable'   => 'ALDRUBAL MORALES MARIN',                // ✏️ OBLIGATORIO: responsable del sitio
+    'responsable'   => 'ALCIDES DUVAN ARISTAZABAL BADILLO',                // ✏️ OBLIGATORIO: responsable del sitio
 
     // --- Patrocinador / anunciante (franja "Patrocinado por") ----------
-    'patrocinador'          => 'ALDRUBAL MORALES MARIN',  // ✏️ Vacío = ocultar franja
+    'patrocinador'          => 'ALCIDES DUVAN ARISTAZABAL BADILLO',  // ✏️ Vacío = ocultar franja
     'patrocinador_doc_tipo' => 'Cédula',                  // ✏️
-    'patrocinador_doc'      => '1.040.734.149',           // ✏️
+    'patrocinador_doc'      => '1.143.394.058',           // ✏️
     'email'         => '',          // ✏️ Correo de contacto de la guía (ej. contacto@sudominio.com). Vacío = formulario oculto
     'url_canonica'  => '',          // ✏️ URL real del sitio (ej. https://sudominio.com/). Vacío = sin canonical
     'anio'          => date('Y'),
@@ -349,13 +349,13 @@ td:first-child{font-weight:600}
 @media (max-width:820px){.cookies__in{flex-direction:column;align-items:stretch;gap:1rem}.cookies__acc .cbtn{flex:1;min-width:0}}
 /* Franja patrocinador */
 .patro{background:#fff;border-block:1px solid var(--c-borde)}
-.patro__in{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:1.5rem;padding-block:1.6rem}
+.patro__in{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:1.5rem;padding-block:1rem}
 .patro__lbl{font-size:.85rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#8a6510;text-align:center}
 .patro__box{display:flex;gap:2.5rem;background:#e4efed;border:1px solid #cfe0dd;border-left:4px solid #d9a441;border-radius:8px;padding:.9rem 1.7rem}
 .patro__box small{display:block;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--c-texto-2)}
 .patro__box b{font-size:1.15rem;color:var(--c-texto)}
 .patro__nota{font-style:italic;color:var(--c-texto-2);text-align:center}
-@media (max-width:820px){.patro__in{grid-template-columns:1fr;text-align:center}.patro__box{flex-direction:column;gap:.6rem;justify-self:center;text-align:left}}
+@media (max-width:820px){.patro__in{grid-template-columns:1fr;text-align:center;gap:.6rem;padding-block:.8rem}.patro__box{gap:1.4rem;justify-self:center;text-align:left;padding:.7rem 1.1rem}.patro__box b{font-size:1rem}.patro__nota{font-size:.9rem}}
 .link-btn{background:none;border:0;color:#fff;text-decoration:underline;cursor:pointer;font:inherit;padding:0}
 
 /* ===================== 15. RESPONSIVE ===================== */
@@ -390,6 +390,20 @@ td:first-child{font-weight:600}
 <div class="franja" role="note">
   <strong>Sitio educativo independiente.</strong> No somos <?= h($SITE['entidad']) ?> ni ningún banco. No recibimos pagos ni transferencias.
 </div>
+
+<!-- ===================== PATROCINADOR ===================== -->
+<?php if ($SITE['patrocinador'] !== ''): ?>
+<section class="patro" aria-label="Patrocinador">
+  <div class="contenedor patro__in">
+    <span class="patro__lbl">Patrocinado por</span>
+    <div class="patro__box">
+      <div><small>Patrocinador</small><b><?= h($SITE['patrocinador']) ?></b></div>
+      <?php if ($SITE['patrocinador_doc'] !== ''): ?><div><small><?= h($SITE['patrocinador_doc_tipo']) ?></small><b><?= h($SITE['patrocinador_doc']) ?></b></div><?php endif; ?>
+    </div>
+    <span class="patro__nota">Contenido educativo independiente</span>
+  </div>
+</section>
+<?php endif; ?>
 
 <!-- ===================== ENCABEZADO ===================== -->
 <header class="header">
@@ -441,19 +455,8 @@ td:first-child{font-weight:600}
   </div>
 </div>
 
-<!-- ===================== PATROCINADOR ===================== -->
-<?php if ($SITE['patrocinador'] !== ''): ?>
-<section class="patro" aria-label="Patrocinador">
-  <div class="contenedor patro__in">
-    <span class="patro__lbl">Patrocinado por</span>
-    <div class="patro__box">
-      <div><small>Patrocinador</small><b><?= h($SITE['patrocinador']) ?></b></div>
-      <?php if ($SITE['patrocinador_doc'] !== ''): ?><div><small><?= h($SITE['patrocinador_doc_tipo']) ?></small><b><?= h($SITE['patrocinador_doc']) ?></b></div><?php endif; ?>
-    </div>
-    <span class="patro__nota">Contenido educativo independiente</span>
-  </div>
-</section>
-<?php endif; ?>
+
+
 
 <!-- ===================== QUIÉNES SOMOS / AVISO ===================== -->
 <section class="seccion seccion--alt" id="aviso">
@@ -645,7 +648,7 @@ td:first-child{font-weight:600}
       <h3>Datos que recogemos</h3>
       <p>Esta guía no solicita ni almacena datos bancarios. Si usa el formulario de contacto, recibimos únicamente su nombre, correo y mensaje para responderle; no se usan para otros fines.</p>
       <h3>Cookies y medición</h3>
-      <p><?php if ($SITE['banner_cookies']): ?>Con su consentimiento, usamos cookies de Google Ads para medir la efectividad de nuestros anuncios. Si las rechaza, no se carga ninguna etiqueta de medición ni publicidad. Si las rechaza, no se activan. Puede cambiar su elección en cualquier momento desde el enlace “Preferencias de cookies” al pie de página.<?php else: ?>Actualmente este sitio no utiliza cookies de medición ni publicidad. Solo guarda en su navegador si ya vio el aviso inicial.<?php endif; ?></p>
+      <p><?php if ($SITE['banner_cookies']): ?>Con su consentimiento, usamos cookies de Google Ads para medir la efectividad de nuestros anuncios. Si las rechaza, no se carga ninguna etiqueta de medición ni publicidad. Puede cambiar su elección en cualquier momento desde el enlace “Preferencias de cookies” al pie de página.<?php else: ?>Actualmente este sitio no utiliza cookies de medición ni publicidad. Solo guarda en su navegador si ya vio el aviso inicial.<?php endif; ?></p>
       <h3>Sus derechos</h3>
       <p>Puede solicitar acceso o eliminación de los datos que nos haya enviado escribiendo a <?= $SITE['email'] !== '' ? '<a href="mailto:' . h($SITE['email']) . '">' . h($SITE['email']) . '</a>' : '<span class="pendiente">PENDIENTE: correo de contacto</span>' ?>.</p>
     </div>
