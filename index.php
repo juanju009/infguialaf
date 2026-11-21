@@ -40,7 +40,7 @@ $SITE = [
 
     // --- Medición (Google Ads / GTM) -----------------------------------
     // Deje vacío si no usa medición. Solo se carga tras aceptar cookies.
-    'gtm_id'        => '',          // ✏️ ej. GTM-XXXXXXX (no invente IDs)
+    'gtm_id'        => 'GTM-TFDQGHHB',          // ✏️ ej. GTM-XXXXXXX (no invente IDs)
     'google_ads_id' => '',          // ✏️ ej. AW-123456789 (de su cuenta de Google Ads)
     'banner_cookies'=> true,        // Barra de preferencias de privacidad
 
