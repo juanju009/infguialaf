@@ -35,8 +35,8 @@ $SITE = [
     'url_regulador' => 'https://www.siboif.gob.ni/',            // Superintendencia de Bancos (SIBOIF)
 
     // --- SEO ------------------------------------------------------------
-    'seo_titulo'      => 'Guía educativa para usar los servicios de LAFISE Nicaragua de forma segura',
-    'seo_descripcion' => 'Guía informativa independiente: consejos para usar banca en línea, app, tarjetas y cajeros de LAFISE en Nicaragua con seguridad. No somos un banco ni recibimos pagos.',
+    'seo_titulo'      => 'Guía de orientación para el buen uso de servicios bancarios en Nicaragua | LAFISE',
+    'seo_descripcion' => 'Guía informativa independiente: orientación para usar la banca en línea, la app, las tarjetas, los cajeros y las transferencias en Nicaragua. No somos un banco ni recibimos pagos.',
 
     // --- Medición (Google Ads / GTM) -----------------------------------
     // Deje vacío si no usa medición. Solo se carga tras aceptar cookies.
@@ -96,7 +96,7 @@ $NAV = [
 
 $PRACTICAS = [
     ['ico' => 'lock',  't' => 'Banca en línea', 'd' => 'Ingrese escribiendo la dirección oficial o desde un marcador guardado. Allí puede consultar saldos y movimientos y realizar operaciones según los servicios que tenga habilitados.'],
-    ['ico' => 'phone', 't' => 'App móvil', 'd' => 'Descargue la app oficial (' . $SITE['app_oficial'] . ') desde Google Play o App Store y mantenga su teléfono actualizado para usarla sin inconvenientes.'],
+    ['ico' => 'phone', 't' => 'App móvil', 'd' => 'Descargue la app oficial de su banco desde Google Play o App Store y mantenga su teléfono actualizado para usarla sin inconvenientes.'],
     ['ico' => 'card',  't' => 'Tarjetas', 'd' => 'Firme su tarjeta al recibirla, memorice su PIN y revise sus movimientos con frecuencia para llevar el control de sus gastos.'],
     ['ico' => 'atm',   't' => 'Cajeros automáticos', 'd' => 'Tenga a mano su tarjeta y su PIN, siga las instrucciones de la pantalla y guarde el comprobante de cada operación.'],
     ['ico' => 'send',  't' => 'Transferencias', 'd' => 'Verifique el nombre del titular y el número de cuenta antes de confirmar, y conserve el comprobante de la operación.'],
@@ -106,7 +106,7 @@ $PRACTICAS = [
 $PASOS_USO = [
     ['Infórmese en los canales oficiales', 'Consulte en el sitio oficial o en una sucursal los productos disponibles y los requisitos vigentes antes de cualquier trámite.'],
     ['Active su acceso digital', 'Siga las instrucciones del banco para habilitar su usuario de banca en línea y crear su contraseña personal.'],
-    ['Instale la app oficial', 'Descargue ' . $SITE['app_oficial'] . ' desde la tienda de su teléfono e ingrese con sus credenciales.'],
+    ['Instale la app oficial', 'Descargue la app oficial de su banco desde la tienda de su teléfono e ingrese con sus credenciales.'],
     ['Lleve el control de sus finanzas', 'Revise sus saldos, movimientos y estados de cuenta con regularidad y guarde los comprobantes de sus operaciones.'],
 ];
 
@@ -119,7 +119,7 @@ $TABLA = [
 ];
 
 $FAQ = [
-    ['¿Ustedes son Banco LAFISE?', 'No. Somos una guía educativa independiente. No somos Banco LAFISE, no pertenecemos a ningún grupo financiero y no somos un banco.'],
+    ['¿Ustedes son Banco LAFISE?', 'No. Somos una guía de orientación independiente: no pertenecemos a ningún grupo financiero y no somos un banco.'],
     ['¿Puedo hacer pagos o transferencias a través de esta página?', 'No. No recibimos ni efectuamos pagos, depósitos ni transferencias de ningún tipo. Esta guía no maneja dinero de ningún tipo.'],
     ['¿Pueden revisar mi cuenta o mi saldo?', 'No. No tenemos acceso a cuentas ni a sistemas bancarios. Para consultar su información, use los canales oficiales del banco.'],
     ['¿Pueden tramitar un préstamo o una tarjeta por mí?', 'No. Solo orientamos sobre el uso de los servicios. Las solicitudes se hacen directamente con la entidad financiera en sus canales oficiales.'],
@@ -387,7 +387,7 @@ td:first-child{font-weight:600}
 
 <!-- Franja permanente de aclaración -->
 <div class="franja" role="note">
-  <strong>Sitio educativo independiente.</strong> No somos <?= h($SITE['entidad']) ?> ni ningún banco. No recibimos pagos ni transferencias.
+  <strong>Sitio educativo independiente.</strong> No somos un banco ni una entidad financiera. No recibimos pagos ni transferencias.
 </div>
 
 <!-- ===================== PATROCINADOR ===================== -->
@@ -429,18 +429,18 @@ td:first-child{font-weight:600}
   <div class="contenedor hero__grid">
     <div>
       <span class="hero__chip"><?= ico('alert') ?> No somos un banco · Solo orientación educativa</span>
-      <h1>Aprenda a usar los servicios de LAFISE en Nicaragua de forma segura</h1>
-      <p class="lead">Una guía práctica e independiente que le orienta, paso a paso, en el uso de la banca en línea, la app, las tarjetas, los cajeros y las transferencias.</p>
+      <h1>Aprenda a usar sus servicios bancarios en Nicaragua de forma ordenada</h1>
+      <p class="lead">Una guía práctica e independiente para clientes de LAFISE que le orienta, paso a paso, en el uso de la banca en línea, la app, las tarjetas, los cajeros y las transferencias.</p>
       <div class="hero__acciones">
         <a class="btn btn--primario" href="#buenas-practicas" data-evento="ver_guia">Ver la guía</a>
         <a class="btn btn--secundario" href="#guia-uso" data-evento="ver_guia_uso">Guía de uso paso a paso</a>
       </div>
-      <p class="hero__nota">Para cualquier operación, consulta de saldo o trámite, use únicamente los canales oficiales de <?= h($SITE['entidad']) ?>.</p>
+      <p class="hero__nota">Para cualquier operación, consulta de saldo o trámite, use únicamente los canales oficiales de su banco.</p>
     </div>
     <div class="hero__visual">
       <div class="tarjeta-hero">
         <h2>Lo que esta guía es y lo que no es</h2>
-        <p class="tarjeta-hero__txt">Esta es una guía de orientación educativa independiente: ofrecemos información y consejos de seguridad, y le orientamos sobre cómo acudir a los canales oficiales. <strong>No somos <?= h($SITE['entidad']) ?> ni ningún banco</strong>, no recibimos ni hacemos pagos o transferencias de ningún tipo, y nunca pedimos claves, PIN, tarjetas ni datos bancarios.</p>
+        <p class="tarjeta-hero__txt">Esta es una guía de orientación educativa independiente: ofrecemos información y consejos de uso, y le orientamos sobre cómo acudir a los canales oficiales. <strong>No somos un banco ni representamos a ninguna entidad financiera</strong>, no recibimos ni hacemos pagos o transferencias de ningún tipo, y nunca pedimos claves, PIN, tarjetas ni datos bancarios.</p>
       </div>
     </div>
   </div>
@@ -463,7 +463,7 @@ td:first-child{font-weight:600}
     <div class="cabecera-seccion" style="margin-bottom:0">
       <span class="eyebrow">Quiénes somos</span>
       <h2>Una guía de orientación, no una entidad financiera</h2>
-      <p class="lead">Este sitio es un proyecto educativo independiente. Nuestra única función es informar y orientar a los usuarios sobre el buen uso de los servicios de <?= h($SITE['entidad']) ?>.</p>
+      <p class="lead">Este sitio es un proyecto educativo independiente. Nuestra única función es informar y orientar a los usuarios sobre el buen uso de sus servicios bancarios.</p>
     </div>
   </div>
 </section>
@@ -478,7 +478,7 @@ td:first-child{font-weight:600}
       <ol class="pasos">
         <li><div><b>Escriba la dirección usted mismo</b><span>Ingrese escribiendo la dirección en su navegador o guárdela en sus marcadores.</span></div></li>
         <li><div><b>Verifique la dirección</b><span>Compruebe que la dirección escrita coincide con la del sitio oficial.</span></div></li>
-        <li><div><b>Descargue la app desde la tienda</b><span>Busque “<?= h($SITE['app_oficial']) ?>” en Google Play o App Store.</span></div></li>
+        <li><div><b>Descargue la app desde la tienda</b><span>Busque la app oficial de su banco en Google Play o App Store.</span></div></li>
         <li><div><b>Use los teléfonos publicados en el sitio oficial</b><span>Para consultas, comuníquese con atención al cliente a través de los números oficiales.</span></div></li>
       </ol>
     </div>
@@ -610,7 +610,7 @@ td:first-child{font-weight:600}
       <?= ico('alert') ?>
       <div>
         <h2 style="font-size:1.4rem">Aviso importante</h2>
-        <p><strong>Este sitio no es Banco LAFISE, no es un banco y no es una entidad financiera; no recibimos transferencias, depósitos ni pagos de ningún tipo, y tampoco efectuamos pagos.</strong> Somos una guía de orientación independiente, sin relación, afiliación, patrocinio ni autorización de Banco LAFISE ni del Grupo LAFISE, cuya única función es orientar sobre el uso de los servicios de <?= h($SITE['entidad']) ?>; las condiciones, tarifas y requisitos vigentes solo los informa la entidad en sus canales oficiales, y “LAFISE” y sus marcas pertenecen a sus titulares y se mencionan únicamente con fines informativos.</p>
+        <p><strong>Este sitio no es Banco LAFISE, no es un banco y no es una entidad financiera; no recibimos transferencias, depósitos ni pagos de ningún tipo, y tampoco efectuamos pagos.</strong> Somos una guía de orientación independiente, sin relación, afiliación, patrocinio ni autorización de Banco LAFISE ni del Grupo LAFISE, cuya única función es orientar sobre el uso de servicios bancarios; las condiciones, tarifas y requisitos vigentes solo los informa la entidad en sus canales oficiales, y las marcas mencionadas pertenecen a sus titulares.</p>
       </div>
     </div>
 
@@ -635,7 +635,7 @@ td:first-child{font-weight:600}
     <div class="footer__grid">
       <div>
         <h3><?= h($SITE['nombre']) ?></h3>
-        <p>Guía educativa independiente sobre el buen uso de los servicios de <?= h($SITE['entidad']) ?>. No somos un banco. No recibimos ni efectuamos pagos.</p>
+        <p>Guía de orientación independiente sobre el buen uso de servicios bancarios. No somos un banco. No recibimos ni efectuamos pagos.</p>
       </div>
       <div>
         <h3>Secciones</h3>
@@ -655,7 +655,7 @@ td:first-child{font-weight:600}
     </div>
     <div class="footer__legal">
       <p>© <?= h((string)$SITE['anio']) ?> <?= h($SITE['nombre']) ?> · Responsable: <?= h($SITE['responsable']) ?><?= $SITE['patrocinador_doc'] !== '' ? ' · ' . h($SITE['patrocinador_doc_tipo']) . ' ' . h($SITE['patrocinador_doc']) : '' ?>.</p>
-      <p>Este sitio no es Banco LAFISE ni está afiliado, patrocinado o autorizado por el Grupo LAFISE. No recibimos transferencias, depósitos ni pagos de ningún tipo.</p>
+      <p>Este sitio no es un banco ni está afiliado, patrocinado o autorizado por ninguna entidad financiera. No recibimos transferencias, depósitos ni pagos de ningún tipo.</p>
     </div>
   </div>
 </footer>
